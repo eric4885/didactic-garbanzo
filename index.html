@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Directory - Discover the Best AI Tools</title>
+    <meta name="description" content="Discover and explore the best AI tools and applications. Your comprehensive directory for artificial intelligence solutions.">
+    <link rel="canonical" href="https://ai-tools-directory.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-gray': '#8E8E93',
+                        'apple-light-gray': '#F2F2F7',
+                        'apple-dark': '#1C1C1E',
+                        'apple-green': '#34C759',
+                        'apple-orange': '#FF9500',
+                        'apple-red': '#FF3B30',
+                        'apple-purple': '#AF52DE'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .apple-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hover-lift {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+        }
+        .category-gradient {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+    </style>
+</head>
+<body class="bg-apple-light-gray min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/90 apple-blur border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="w-8 h-8 bg-gradient-to-r from-apple-blue to-apple-purple rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 2.982.786 4.789A1 1 0 0113 13GHz" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-semibold text-apple-dark">AI Tools Directory</h1>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">Tools</a>
+                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">Categories</a>
+                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">Trending</a>
+                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">About</a>
+                </nav>
+                
+                <button class="md:hidden p-2 rounded-lg bg-apple-light-gray">
+                    <svg class="w-6 h-6 text-apple-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+                Discover the Best
+                <span class="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                    AI Tools
+                </span>
+            </h1>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Your comprehensive directory for artificial intelligence solutions. Find, compare, and explore cutting-edge AI tools for every need.
+            </p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto relative">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        placeholder="Search AI tools, categories, or features..."
+                        class="w-full px-6 py-4 text-lg rounded-full border-0 bg-white/95 apple-blur shadow-lg focus:outline-none focus:ring-4 focus:ring-apple-blue/30 placeholder-apple-gray"
+                    >
+                    <button class="absolute right-2 top-2 p-2 bg-apple-blue rounded-full text-white hover:bg-blue-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-apple-blue mb-2">2,500+</div>
+                    <div class="text-apple-gray">AI Tools</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-apple-green mb-2">50+</div>
+                    <div class="text-apple-gray">Categories</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-apple-orange mb-2">1M+</div>
+                    <div class="text-apple-gray">Monthly Users</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-apple-purple mb-2">24/7</div>
+                    <div class="text-apple-gray">Updated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-apple-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-apple-dark mb-12">Explore Categories</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer apple-blur">
+                    <div class="w-12 h-12 bg-gradient-to-r from-apple-blue to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Writing & Content</h3>
+                    <p class="text-sm text-apple-gray mb-3">AI writing assistants and content generators</p>
+                    <div class="text-xs text-apple-blue font-medium">324 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-apple-green to-green-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Image & Video</h3>
+                    <p class="text-sm text-apple-gray mb-3">Visual AI tools for creation and editing</p>
+                    <div class="text-xs text-apple-green font-medium">256 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-apple-purple to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Business & Productivity</h3>
+                    <p class="text-sm text-apple-gray mb-3">Streamline workflows and boost efficiency</p>
+                    <div class="text-xs text-apple-purple font-medium">198 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-apple-orange to-orange-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Marketing & Sales</h3>
+                    <p class="text-sm text-apple-gray mb-3">AI-powered marketing automation</p>
+                    <div class="text-xs text-apple-orange font-medium">167 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-apple-red to-red-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Development & Code</h3>
+                    <p class="text-sm text-apple-gray mb-3">AI coding assistants and development tools</p>
+                    <div class="text-xs text-apple-red font-medium">143 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2v1a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2V3a2 2 0 012-2 2 2 0 012 2v1a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Data & Analytics</h3>
+                    <p class="text-sm text-apple-gray mb-3">Intelligent data analysis and insights</p>
+                    <div class="text-xs text-indigo-500 font-medium">89 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Security & Privacy</h3>
+                    <p class="text-sm text-apple-gray mb-3">AI-powered security solutions</p>
+                    <div class="text-xs text-pink-500 font-medium">76 tools</div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
+                    <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">Education & Learning</h3>
+                    <p class="text-sm text-apple-gray mb-3">AI tutors and educational platforms</p>
+                    <div class="text-xs text-teal-500 font-medium">112 tools</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tools Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold text-apple-dark">Featured AI Tools</h2>
+                <button class="text-apple-blue hover:text-blue-600 font-medium flex items-center">
+                    View All
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tool Card 1 -->
+                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift">
+                    <div class="h-48 bg-gradient-to-r from-apple-blue to-blue-600 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-apple-blue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-apple-dark">ChatGPT</h3>
+                            <span class="bg-apple-green text-white text-xs px-2 py-1 rounded-full">Free</span>
+                        </div>
+                        <p class="text-apple-gray mb-4">Advanced conversational AI that can help with writing, analysis, coding, and creative tasks.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-apple-gray">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                4.9 (12k reviews)
+                            </div>
+                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Card 2 -->
+                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift">
+                    <div class="h-48 bg-gradient-to-r from-apple-purple to-purple-600 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-apple-purple" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-apple-dark">Midjourney</h3>
+                            <span class="bg-apple-orange text-white text-xs px-2 py-1 rounded-full">Premium</span>
+                        </div>
+                        <p class="text-apple-gray mb-4">Create stunning, high-quality images from text descriptions with advanced AI image generation.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-apple-gray">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                4.8 (8.5k reviews)
+                            </div>
+                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Card 3 -->
+                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift">
+                    <div class="h-48 bg-gradient-to-r from-apple-green to-green-600 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-apple-green" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-apple-dark">GitHub Copilot</h3>
+                            <span class="bg-apple-orange text-white text-xs px-2 py-1 rounded-full">Premium</span>
+                        </div>
+                        <p class="text-apple-gray mb-4">AI-powered code completion and programming assistant that helps developers write code faster.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-apple-gray">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                4.7 (15k reviews)
+                            </div>
+                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-apple-blue to-purple-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with AI Innovation</h2>
+            <p class="text-xl text-white/90 mb-8">Get weekly updates on the latest AI tools and trends delivered to your inbox.</p>
+            
+            <div class="max-w-md mx-auto flex gap-4">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    class="flex-1 px-4 py-3 rounded-xl border-0 bg-white/95 apple-blur focus:outline-none focus:ring-4 focus:ring-white/30"
+                >
+                <button class="px-6 py-3 bg-white text-apple-blue rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-apple-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-apple-blue to-apple-purple rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 2.982.786 4.789A1 1 0 0113 13GHhz" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-semibold">AI Tools Directory</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your comprehensive directory for discovering and exploring the best AI tools and applications.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Writing & Content</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Image & Video</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Business Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Development</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">AI News</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Compare Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Submit Tool</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AI Tools Directory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('input[type="text"]');
+            const searchButton = document.querySelector('.gradient-bg button');
+            
+            function handleSearch() {
+                const query = searchInput.value.trim();
+                if (query) {
+                    console.log('Searching for:', query);
+                    // Here you would implement actual search functionality
+                    alert(`Search functionality would be implemented here for: "${query}"`);
+                }
+            }
+            
+            searchButton?.addEventListener('click', handleSearch);
+            searchInput?.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    handleSearch();
+                }
+            });
+            
+            // Newsletter subscription
+            const subscribeButton = document.querySelector('section:nth-of-type(6) button');
+            const emailInput = document.querySelector('input[type="email"]');
+            
+            subscribeButton?.addEventListener('click', function() {
+                const email = emailInput?.value.trim();
+                if (email && email.includes('@')) {
+                    alert('Thank you for subscribing! You will receive our weekly AI newsletter.');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+            
+            // Category card interactions
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const categoryName = this.querySelector('h3').textContent;
+                    console.log('Clicked category:', categoryName);
+                    // Here you would navigate to the category page
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('header button');
+            mobileMenuButton?.addEventListener('click', function() {
+                // Toggle mobile menu (would need additional implementation)
+                console.log('Mobile menu toggled');
+            });
+        });
+    </script>
+</body>
+</html>
