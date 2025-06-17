@@ -42,6 +42,16 @@
         .category-gradient {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
         }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .nav-link.active {
+            color: #007AFF;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="bg-apple-light-gray min-h-screen">
@@ -55,293 +65,292 @@
                             <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 2.982.786 4.789A1 1 0 0113 13GHz" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h1 class="text-xl font-semibold text-apple-dark">AI Tools Directory</h1>
+                    <h1 class="text-xl font-semibold text-apple-dark cursor-pointer" onclick="showPage('home')">AI Tools Directory</h1>
                 </div>
                 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">Tools</a>
-                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">Categories</a>
-                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">Trending</a>
-                    <a href="#" class="text-apple-gray hover:text-apple-blue transition-colors">About</a>
+                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('tools')">Tools</a>
+                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('categories')">Categories</a>
+                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('trending')">Trending</a>
+                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('about')">About</a>
                 </nav>
                 
-                <button class="md:hidden p-2 rounded-lg bg-apple-light-gray">
+                <button class="md:hidden p-2 rounded-lg bg-apple-light-gray" onclick="toggleMobileMenu()">
                     <svg class="w-6 h-6 text-apple-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('tools')">Tools</a>
+                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('categories')">Categories</a>
+                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('trending')">Trending</a>
+                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('about')">About</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg py-16 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Discover the Best
-                <span class="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                    AI Tools
-                </span>
-            </h1>
-            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-                Your comprehensive directory for artificial intelligence solutions. Find, compare, and explore cutting-edge AI tools for every need.
-            </p>
-            
-            <!-- Search Bar -->
-            <div class="max-w-2xl mx-auto relative">
-                <div class="relative">
-                    <input 
-                        type="text" 
-                        placeholder="Search AI tools, categories, or features..."
-                        class="w-full px-6 py-4 text-lg rounded-full border-0 bg-white/95 apple-blur shadow-lg focus:outline-none focus:ring-4 focus:ring-apple-blue/30 placeholder-apple-gray"
-                    >
-                    <button class="absolute right-2 top-2 p-2 bg-apple-blue rounded-full text-white hover:bg-blue-600 transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="gradient-bg py-16 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
+                    Discover the Best
+                    <span class="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                        AI Tools
+                    </span>
+                </h1>
+                <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                    Your comprehensive directory for artificial intelligence solutions. Find, compare, and explore cutting-edge AI tools for every need.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto relative">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="searchInput"
+                            placeholder="Search AI tools, categories, or features..."
+                            class="w-full px-6 py-4 text-lg rounded-full border-0 bg-white/95 apple-blur shadow-lg focus:outline-none focus:ring-4 focus:ring-apple-blue/30 placeholder-apple-gray"
+                        >
+                        <button class="absolute right-2 top-2 p-2 bg-apple-blue rounded-full text-white hover:bg-blue-600 transition-colors" onclick="performSearch()">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-apple-blue mb-2">2,500+</div>
+                        <div class="text-apple-gray">AI Tools</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-apple-green mb-2">50+</div>
+                        <div class="text-apple-gray">Categories</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-apple-orange mb-2">1M+</div>
+                        <div class="text-apple-gray">Monthly Users</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-apple-purple mb-2">24/7</div>
+                        <div class="text-apple-gray">Updated</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-16 bg-apple-light-gray">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-apple-dark mb-12">Explore Categories</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="categoriesGrid">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Tools Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-3xl font-bold text-apple-dark">Featured AI Tools</h2>
+                    <button class="text-apple-blue hover:text-blue-600 font-medium flex items-center" onclick="showPage('tools')">
+                        View All
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
                 </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="featuredTools">
+                    <!-- Featured tools will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 bg-gradient-to-r from-apple-blue to-purple-600">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with AI Innovation</h2>
+                <p class="text-xl text-white/90 mb-8">Get weekly updates on the latest AI tools and trends delivered to your inbox.</p>
+                
+                <div class="max-w-md mx-auto flex gap-4">
+                    <input 
+                        type="email" 
+                        id="newsletterEmail"
+                        placeholder="Enter your email"
+                        class="flex-1 px-4 py-3 rounded-xl border-0 bg-white/95 apple-blur focus:outline-none focus:ring-4 focus:ring-white/30"
+                    >
+                    <button class="px-6 py-3 bg-white text-apple-blue rounded-xl font-semibold hover:bg-gray-100 transition-colors" onclick="subscribeNewsletter()">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tools Page -->
+    <div id="tools" class="page">
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h1 class="text-4xl font-bold text-apple-dark">All AI Tools</h1>
+                    <div class="flex items-center space-x-4">
+                        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent" onchange="filterTools(this.value)">
+                            <option value="">All Categories</option>
+                            <option value="writing">Writing & Content</option>
+                            <option value="image">Image & Video</option>
+                            <option value="business">Business & Productivity</option>
+                            <option value="development">Development & Code</option>
+                            <option value="marketing">Marketing & Sales</option>
+                        </select>
+                        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent" onchange="sortTools(this.value)">
+                            <option value="featured">Featured</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="newest">Newest</option>
+                            <option value="name">Name A-Z</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="toolsGrid">
+                    <!-- Tools will be populated by JavaScript -->
+                </div>
+                
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12">
+                    <nav class="flex items-center space-x-2">
+                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">Previous</button>
+                        <button class="px-3 py-2 rounded-lg bg-apple-blue text-white">1</button>
+                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">2</button>
+                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">3</button>
+                        <span class="px-3 py-2">...</span>
+                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">12</button>
+                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">Next</button>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Categories Page -->
+    <div id="categories" class="page">
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-center text-apple-dark mb-8">Browse by Category</h1>
+                <p class="text-xl text-apple-gray text-center mb-12 max-w-3xl mx-auto">
+                    Explore AI tools organized by category to find exactly what you need for your projects and workflows.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="categoriesDetailGrid">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Trending Page -->
+    <div id="trending" class="page">
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-center text-apple-dark mb-8">Trending AI Tools</h1>
+                <p class="text-xl text-apple-gray text-center mb-12">
+                    Discover the most popular and fastest-growing AI tools in the community.
+                </p>
+                
+                <!-- Trending Stats -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-gradient-to-r from-apple-blue to-blue-600 rounded-2xl p-8 text-white text-center">
+                        <div class="text-3xl font-bold mb-2">🔥 Hot This Week</div>
+                        <div class="text-lg opacity-90">Most visited tools in the last 7 days</div>
+                    </div>
+                    <div class="bg-gradient-to-r from-apple-green to-green-600 rounded-2xl p-8 text-white text-center">
+                        <div class="text-3xl font-bold mb-2">📈 Rising Stars</div>
+                        <div class="text-lg opacity-90">Fastest growing in popularity</div>
+                    </div>
+                    <div class="bg-gradient-to-r from-apple-purple to-purple-600 rounded-2xl p-8 text-white text-center">
+                        <div class="text-3xl font-bold mb-2">⭐ Top Rated</div>
+                        <div class="text-lg opacity-90">Highest user ratings this month</div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="trendingTools">
+                    <!-- Trending tools will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-center text-apple-dark mb-8">About AI Tools Directory</h1>
+                
+                <div class="prose prose-lg mx-auto text-apple-gray">
+                    <p class="text-xl leading-relaxed mb-8">
+                        Welcome to AI Tools Directory, your comprehensive guide to discovering and exploring the best artificial intelligence tools and applications available today.
+                    </p>
+                    
+                    <h2 class="text-2xl font-bold text-apple-dark mb-4">Our Mission</h2>
+                    <p class="mb-6">
+                        We believe that AI technology should be accessible to everyone. Our mission is to democratize access to AI tools by providing a curated, easy-to-navigate directory that helps users find the perfect AI solution for their needs.
+                    </p>
+                    
+                    <h2 class="text-2xl font-bold text-apple-dark mb-4">What We Offer</h2>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Comprehensive database of 2,500+ AI tools across 50+ categories</li>
+                        <li>Detailed reviews and ratings from our community</li>
+                        <li>Regular updates on the latest AI innovations</li>
+                        <li>Comparison tools to help you make informed decisions</li>
+                        <li>Educational resources and tutorials</li>
+                    </ul>
+                    
+                    <h2 class="text-2xl font-bold text-apple-dark mb-4">Our Team</h2>
+                    <p class="mb-6">
+                        Our team consists of AI researchers, developers, and enthusiasts who are passionate about making AI technology more accessible. We continuously research and evaluate new tools to ensure our directory remains the most comprehensive and up-to-date resource available.
+                    </p>
+                    
+                    <h2 class="text-2xl font-bold text-apple-dark mb-4">Contact Us</h2>
+                    <p class="mb-6">
+                        Have a question or want to submit a new AI tool for review? We'd love to hear from you!
+                    </p>
+                    
+                    <div class="bg-apple-light-gray rounded-2xl p-8 text-center">
+                        <h3 class="text-xl font-semibold text-apple-dark mb-4">Get in Touch</h3>
+                        <div class="space-y-2">
+                            <p>📧 Email: contact@ai-tools-directory.com</p>
+                            <p>🐦 Twitter: @AIToolsDir</p>
+                            <p>💼 LinkedIn: AI Tools Directory</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tool Detail Modal -->
+    <div id="toolModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" onclick="closeToolModal()">
+        <div class="max-w-4xl mx-auto mt-8 mb-8 bg-white rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <div id="toolModalContent">
+                <!-- Tool details will be populated by JavaScript -->
             </div>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl font-bold text-apple-blue mb-2">2,500+</div>
-                    <div class="text-apple-gray">AI Tools</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-apple-green mb-2">50+</div>
-                    <div class="text-apple-gray">Categories</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-apple-orange mb-2">1M+</div>
-                    <div class="text-apple-gray">Monthly Users</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-bold text-apple-purple mb-2">24/7</div>
-                    <div class="text-apple-gray">Updated</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="py-16 bg-apple-light-gray">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-apple-dark mb-12">Explore Categories</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer apple-blur">
-                    <div class="w-12 h-12 bg-gradient-to-r from-apple-blue to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Writing & Content</h3>
-                    <p class="text-sm text-apple-gray mb-3">AI writing assistants and content generators</p>
-                    <div class="text-xs text-apple-blue font-medium">324 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-apple-green to-green-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Image & Video</h3>
-                    <p class="text-sm text-apple-gray mb-3">Visual AI tools for creation and editing</p>
-                    <div class="text-xs text-apple-green font-medium">256 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-apple-purple to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Business & Productivity</h3>
-                    <p class="text-sm text-apple-gray mb-3">Streamline workflows and boost efficiency</p>
-                    <div class="text-xs text-apple-purple font-medium">198 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-apple-orange to-orange-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Marketing & Sales</h3>
-                    <p class="text-sm text-apple-gray mb-3">AI-powered marketing automation</p>
-                    <div class="text-xs text-apple-orange font-medium">167 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-apple-red to-red-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Development & Code</h3>
-                    <p class="text-sm text-apple-gray mb-3">AI coding assistants and development tools</p>
-                    <div class="text-xs text-apple-red font-medium">143 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2v1a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2V3a2 2 0 012-2 2 2 0 012 2v1a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Data & Analytics</h3>
-                    <p class="text-sm text-apple-gray mb-3">Intelligent data analysis and insights</p>
-                    <div class="text-xs text-indigo-500 font-medium">89 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Security & Privacy</h3>
-                    <p class="text-sm text-apple-gray mb-3">AI-powered security solutions</p>
-                    <div class="text-xs text-pink-500 font-medium">76 tools</div>
-                </div>
-
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">Education & Learning</h3>
-                    <p class="text-sm text-apple-gray mb-3">AI tutors and educational platforms</p>
-                    <div class="text-xs text-teal-500 font-medium">112 tools</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Tools Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center mb-12">
-                <h2 class="text-3xl font-bold text-apple-dark">Featured AI Tools</h2>
-                <button class="text-apple-blue hover:text-blue-600 font-medium flex items-center">
-                    View All
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Tool Card 1 -->
-                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift">
-                    <div class="h-48 bg-gradient-to-r from-apple-blue to-blue-600 flex items-center justify-center">
-                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
-                            <svg class="w-8 h-8 text-apple-blue" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-apple-dark">ChatGPT</h3>
-                            <span class="bg-apple-green text-white text-xs px-2 py-1 rounded-full">Free</span>
-                        </div>
-                        <p class="text-apple-gray mb-4">Advanced conversational AI that can help with writing, analysis, coding, and creative tasks.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-apple-gray">
-                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                4.9 (12k reviews)
-                            </div>
-                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tool Card 2 -->
-                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift">
-                    <div class="h-48 bg-gradient-to-r from-apple-purple to-purple-600 flex items-center justify-center">
-                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
-                            <svg class="w-8 h-8 text-apple-purple" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-apple-dark">Midjourney</h3>
-                            <span class="bg-apple-orange text-white text-xs px-2 py-1 rounded-full">Premium</span>
-                        </div>
-                        <p class="text-apple-gray mb-4">Create stunning, high-quality images from text descriptions with advanced AI image generation.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-apple-gray">
-                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                4.8 (8.5k reviews)
-                            </div>
-                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tool Card 3 -->
-                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift">
-                    <div class="h-48 bg-gradient-to-r from-apple-green to-green-600 flex items-center justify-center">
-                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
-                            <svg class="w-8 h-8 text-apple-green" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-apple-dark">GitHub Copilot</h3>
-                            <span class="bg-apple-orange text-white text-xs px-2 py-1 rounded-full">Premium</span>
-                        </div>
-                        <p class="text-apple-gray mb-4">AI-powered code completion and programming assistant that helps developers write code faster.</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-apple-gray">
-                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                4.7 (15k reviews)
-                            </div>
-                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gradient-to-r from-apple-blue to-purple-600">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with AI Innovation</h2>
-            <p class="text-xl text-white/90 mb-8">Get weekly updates on the latest AI tools and trends delivered to your inbox.</p>
-            
-            <div class="max-w-md mx-auto flex gap-4">
-                <input 
-                    type="email" 
-                    placeholder="Enter your email"
-                    class="flex-1 px-4 py-3 rounded-xl border-0 bg-white/95 apple-blur focus:outline-none focus:ring-4 focus:ring-white/30"
-                >
-                <button class="px-6 py-3 bg-white text-apple-blue rounded-xl font-semibold hover:bg-gray-100 transition-colors">
-                    Subscribe
-                </button>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-apple-dark text-white py-12">
@@ -379,10 +388,10 @@
                 <div>
                     <h3 class="font-semibold mb-4">Categories</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Writing & Content</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Image & Video</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Business Tools</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('writing')">Writing & Content</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('image')">Image & Video</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('business')">Business Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('development')">Development</a></li>
                     </ul>
                 </div>
                 
@@ -399,7 +408,7 @@
                 <div>
                     <h3 class="font-semibold mb-4">Company</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors" onclick="showPage('about')">About Us</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
@@ -414,56 +423,487 @@
     </footer>
 
     <script>
-        // Simple search functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.querySelector('input[type="text"]');
-            const searchButton = document.querySelector('.gradient-bg button');
+        // Sample data
+        const categories = [
+            {
+                id: 'writing',
+                name: 'Writing & Content',
+                description: 'AI writing assistants and content generators',
+                count: 324,
+                color: 'from-apple-blue to-blue-600',
+                icon: `<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>`
+            },
+            {
+                id: 'image',
+                name: 'Image & Video',
+                description: 'Visual AI tools for creation and editing',
+                count: 256,
+                color: 'from-apple-green to-green-600',
+                icon: `<path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>`
+            },
+            {
+                id: 'business',
+                name: 'Business & Productivity',
+                description: 'Streamline workflows and boost efficiency',
+                count: 198,
+                color: 'from-apple-purple to-purple-600',
+                icon: `<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>`
+            },
+            {
+                id: 'marketing',
+                name: 'Marketing & Sales',
+                description: 'AI-powered marketing automation',
+                count: 167,
+                color: 'from-apple-orange to-orange-600',
+                icon: `<path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>`
+            },
+            {
+                id: 'development',
+                name: 'Development & Code',
+                description: 'AI coding assistants and development tools',
+                count: 143,
+                color: 'from-apple-red to-red-600',
+                icon: `<path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>`
+            },
+            {
+                id: 'data',
+                name: 'Data & Analytics',
+                description: 'Intelligent data analysis and insights',
+                count: 89,
+                color: 'from-indigo-500 to-indigo-600',
+                icon: `<path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2v1a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2V3a2 2 0 012-2 2 2 0 012 2v1a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>`
+            },
+            {
+                id: 'security',
+                name: 'Security & Privacy',
+                description: 'AI-powered security solutions',
+                count: 76,
+                color: 'from-pink-500 to-pink-600',
+                icon: `<path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>`
+            },
+            {
+                id: 'education',
+                name: 'Education & Learning',
+                description: 'AI tutors and educational platforms',
+                count: 112,
+                color: 'from-teal-500 to-teal-600',
+                icon: `<path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>`
+            }
+        ];
+
+        const tools = [
+            {
+                id: 1,
+                name: 'ChatGPT',
+                description: 'Advanced conversational AI that can help with writing, analysis, coding, and creative tasks.',
+                category: 'writing',
+                rating: 4.9,
+                reviews: 12000,
+                pricing: 'Free',
+                color: 'from-apple-blue to-blue-600',
+                features: ['Natural Language Processing', 'Code Generation', 'Creative Writing', 'Data Analysis'],
+                website: 'https://chat.openai.com',
+                isFeatured: true,
+                trending: true
+            },
+            {
+                id: 2,
+                name: 'Midjourney',
+                description: 'Create stunning, high-quality images from text descriptions with advanced AI image generation.',
+                category: 'image',
+                rating: 4.8,
+                reviews: 8500,
+                pricing: 'Premium',
+                color: 'from-apple-purple to-purple-600',
+                features: ['Text-to-Image', 'High Resolution', 'Artistic Styles', 'Commercial Use'],
+                website: 'https://midjourney.com',
+                isFeatured: true,
+                trending: true
+            },
+            {
+                id: 3,
+                name: 'GitHub Copilot',
+                description: 'AI-powered code completion and programming assistant that helps developers write code faster.',
+                category: 'development',
+                rating: 4.7,
+                reviews: 15000,
+                pricing: 'Premium',
+                color: 'from-apple-green to-green-600',
+                features: ['Code Completion', 'Multiple Languages', 'IDE Integration', 'Context-Aware'],
+                website: 'https://github.com/copilot',
+                isFeatured: true,
+                trending: false
+            },
+            {
+                id: 4,
+                name: 'Jasper AI',
+                description: 'AI writing assistant for marketing copy, blog posts, and creative content creation.',
+                category: 'writing',
+                rating: 4.6,
+                reviews: 5200,
+                pricing: 'Premium',
+                color: 'from-apple-orange to-orange-600',
+                features: ['Content Templates', 'Brand Voice', 'SEO Optimization', 'Team Collaboration'],
+                website: 'https://jasper.ai',
+                isFeatured: false,
+                trending: true
+            },
+            {
+                id: 5,
+                name: 'Tableau AI',
+                description: 'Transform data into actionable insights with AI-powered analytics and visualization.',
+                category: 'data',
+                rating: 4.5,
+                reviews: 3800,
+                pricing: 'Enterprise',
+                color: 'from-indigo-500 to-indigo-600',
+                features: ['Data Visualization', 'Predictive Analytics', 'Natural Language Queries', 'Dashboard Creation'],
+                website: 'https://tableau.com',
+                isFeatured: false,
+                trending: false
+            },
+            {
+                id: 6,
+                name: 'HubSpot AI',
+                description: 'AI-powered marketing automation and customer relationship management platform.',
+                category: 'marketing',
+                rating: 4.4,
+                reviews: 7200,
+                pricing: 'Freemium',
+                color: 'from-apple-red to-red-600',
+                features: ['Lead Scoring', 'Email Automation', 'Chatbot Builder', 'Sales Pipeline'],
+                website: 'https://hubspot.com',
+                isFeatured: false,
+                trending: true
+            }
+        ];
+
+        let currentPage = 'home';
+        let filteredTools = tools;
+
+        // Navigation functions
+        function showPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             
-            function handleSearch() {
-                const query = searchInput.value.trim();
-                if (query) {
-                    console.log('Searching for:', query);
-                    // Here you would implement actual search functionality
-                    alert(`Search functionality would be implemented here for: "${query}"`);
-                }
+            // Show selected page
+            document.getElementById(page).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelector(`[onclick="showPage('${page}')"]`)?.classList.add('active');
+            
+            currentPage = page;
+            
+            // Populate page content
+            if (page === 'home') {
+                populateHomeCategories();
+                populateFeaturedTools();
+            } else if (page === 'tools') {
+                populateAllTools();
+            } else if (page === 'categories') {
+                populateCategoriesDetail();
+            } else if (page === 'trending') {
+                populateTrendingTools();
             }
             
-            searchButton?.addEventListener('click', handleSearch);
-            searchInput?.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    handleSearch();
-                }
-            });
+            // Hide mobile menu if open
+            document.getElementById('mobileMenu').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Populate functions
+        function populateHomeCategories() {
+            const grid = document.getElementById('categoriesGrid');
+            grid.innerHTML = categories.map(cat => `
+                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer" onclick="showCategoryTools('${cat.id}')">
+                    <div class="w-12 h-12 bg-gradient-to-r ${cat.color} rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            ${cat.icon}
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-apple-dark mb-2">${cat.name}</h3>
+                    <p class="text-sm text-apple-gray mb-3">${cat.description}</p>
+                    <div class="text-xs text-${cat.color.split('-')[1]} font-medium">${cat.count} tools</div>
+                </div>
+            `).join('');
+        }
+
+        function populateFeaturedTools() {
+            const grid = document.getElementById('featuredTools');
+            const featured = tools.filter(tool => tool.isFeatured);
+            grid.innerHTML = featured.map(tool => createToolCard(tool)).join('');
+        }
+
+        function populateAllTools() {
+            const grid = document.getElementById('toolsGrid');
+            grid.innerHTML = filteredTools.map(tool => createToolCard(tool)).join('');
+        }
+
+        function populateCategoriesDetail() {
+            const grid = document.getElementById('categoriesDetailGrid');
+            grid.innerHTML = categories.map(cat => `
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover-lift cursor-pointer" onclick="showCategoryTools('${cat.id}')">
+                    <div class="w-16 h-16 bg-gradient-to-r ${cat.color} rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            ${cat.icon}
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-apple-dark mb-4">${cat.name}</h3>
+                    <p class="text-apple-gray mb-6">${cat.description}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-3xl font-bold text-${cat.color.split('-')[1]}">${cat.count}</span>
+                        <span class="text-apple-gray">tools available</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function populateTrendingTools() {
+            const grid = document.getElementById('trendingTools');
+            const trending = tools.filter(tool => tool.trending);
+            grid.innerHTML = trending.map((tool, index) => `
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer relative" onclick="showToolDetail(${tool.id})">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full">
+                            🔥 #${index + 1} Trending
+                        </span>
+                    </div>
+                    <div class="h-32 bg-gradient-to-r ${tool.color} rounded-xl flex items-center justify-center mb-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-2xl font-bold text-gray-800">${tool.name.charAt(0)}</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-apple-dark mb-2">${tool.name}</h3>
+                    <p class="text-apple-gray mb-4">${tool.description}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm text-apple-gray">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            ${tool.rating} (${tool.reviews.toLocaleString()} reviews)
+                        </div>
+                        <span class="bg-apple-${tool.pricing === 'Free' ? 'green' : tool.pricing === 'Premium' ? 'orange' : 'purple'} text-white text-xs px-2 py-1 rounded-full">${tool.pricing}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function createToolCard(tool) {
+            return `
+                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift cursor-pointer" onclick="showToolDetail(${tool.id})">
+                    <div class="h-48 bg-gradient-to-r ${tool.color} flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-bold text-gray-800">${tool.name.charAt(0)}</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-apple-dark">${tool.name}</h3>
+                            <span class="bg-apple-${tool.pricing === 'Free' ? 'green' : tool.pricing === 'Premium' ? 'orange' : 'purple'} text-white text-xs px-2 py-1 rounded-full">${tool.pricing}</span>
+                        </div>
+                        <p class="text-apple-gray mb-4">${tool.description}</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-sm text-apple-gray">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                ${tool.rating} (${tool.reviews.toLocaleString()} reviews)
+                            </div>
+                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Tool detail modal
+        function showToolDetail(toolId) {
+            const tool = tools.find(t => t.id === toolId);
+            if (!tool) return;
             
-            // Newsletter subscription
-            const subscribeButton = document.querySelector('section:nth-of-type(6) button');
-            const emailInput = document.querySelector('input[type="email"]');
+            const modal = document.getElementById('toolModal');
+            const content = document.getElementById('toolModalContent');
             
-            subscribeButton?.addEventListener('click', function() {
-                const email = emailInput?.value.trim();
-                if (email && email.includes('@')) {
-                    alert('Thank you for subscribing! You will receive our weekly AI newsletter.');
-                    emailInput.value = '';
+            content.innerHTML = `
+                <div class="h-64 bg-gradient-to-r ${tool.color} flex items-center justify-center relative">
+                    <button class="absolute top-4 right-4 text-white hover:bg-white/20 rounded-full p-2" onclick="closeToolModal()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    <div class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center">
+                        <span class="text-4xl font-bold text-gray-800">${tool.name.charAt(0)}</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h1 class="text-3xl font-bold text-apple-dark">${tool.name}</h1>
+                        <span class="bg-apple-${tool.pricing === 'Free' ? 'green' : tool.pricing === 'Premium' ? 'orange' : 'purple'} text-white px-4 py-2 rounded-full">${tool.pricing}</span>
+                    </div>
+                    
+                    <p class="text-lg text-apple-gray mb-6">${tool.description}</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-apple-dark mb-4">Key Features</h3>
+                            <ul class="space-y-2">
+                                ${tool.features.map(feature => `
+                                    <li class="flex items-center text-apple-gray">
+                                        <svg class="w-4 h-4 text-apple-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        ${feature}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-apple-dark mb-4">Details</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-apple-blue mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <span class="text-apple-gray">${tool.rating}/5.0 (${tool.reviews.toLocaleString()} reviews)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-apple-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-apple-gray">Category: ${categories.find(c => c.id === tool.category)?.name}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <a href="${tool.website}" target="_blank" class="bg-apple-blue text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors">
+                            Visit Website
+                        </a>
+                        <button class="bg-apple-light-gray text-apple-dark px-6 py-3 rounded-xl font-semibold hover:bg-gray-300 transition-colors">
+                            Add to Favorites
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeToolModal() {
+            document.getElementById('toolModal').classList.add('hidden');
+        }
+
+        // Category filtering
+        function showCategoryTools(categoryId) {
+            showPage('tools');
+            filterTools(categoryId);
+            
+            // Update category filter dropdown
+            const categorySelect = document.querySelector('select[onchange="filterTools(this.value)"]');
+            if (categorySelect) {
+                categorySelect.value = categoryId;
+            }
+        }
+
+        function filterTools(category) {
+            if (category === '') {
+                filteredTools = tools;
+            } else {
+                filteredTools = tools.filter(tool => tool.category === category);
+            }
+            
+            if (currentPage === 'tools') {
+                populateAllTools();
+            }
+        }
+
+        function sortTools(sortBy) {
+            switch (sortBy) {
+                case 'rating':
+                    filteredTools.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'newest':
+                    filteredTools.sort((a, b) => b.id - a.id);
+                    break;
+                case 'name':
+                    filteredTools.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                default: // featured
+                    filteredTools.sort((a, b) => {
+                        if (a.isFeatured && !b.isFeatured) return -1;
+                        if (!a.isFeatured && b.isFeatured) return 1;
+                        return b.rating - a.rating;
+                    });
+            }
+            
+            if (currentPage === 'tools') {
+                populateAllTools();
+            }
+        }
+
+        // Search functionality
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                const searchResults = tools.filter(tool => 
+                    tool.name.toLowerCase().includes(query.toLowerCase()) ||
+                    tool.description.toLowerCase().includes(query.toLowerCase()) ||
+                    tool.features.some(feature => feature.toLowerCase().includes(query.toLowerCase()))
+                );
+                
+                filteredTools = searchResults;
+                showPage('tools');
+                
+                // Show search results message
+                const toolsGrid = document.getElementById('toolsGrid');
+                if (searchResults.length === 0) {
+                    toolsGrid.innerHTML = `
+                        <div class="col-span-full text-center py-16">
+                            <h3 class="text-2xl font-semibold text-apple-dark mb-4">No tools found</h3>
+                            <p class="text-apple-gray">Try adjusting your search terms or browse our categories.</p>
+                        </div>
+                    `;
                 } else {
-                    alert('Please enter a valid email address.');
+                    populateAllTools();
+                }
+            }
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value.trim();
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing! You will receive our weekly AI newsletter.');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize home page
+            populateHomeCategories();
+            populateFeaturedTools();
+            
+            // Search on Enter key
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
                 }
             });
             
-            // Category card interactions
-            const categoryCards = document.querySelectorAll('.category-card');
-            categoryCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const categoryName = this.querySelector('h3').textContent;
-                    console.log('Clicked category:', categoryName);
-                    // Here you would navigate to the category page
-                });
-            });
-            
-            // Mobile menu toggle
-            const mobileMenuButton = document.querySelector('header button');
-            mobileMenuButton?.addEventListener('click', function() {
-                // Toggle mobile menu (would need additional implementation)
-                console.log('Mobile menu toggled');
+            // Newsletter subscription on Enter key
+            document.getElementById('newsletterEmail').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    subscribeNewsletter();
+                }
             });
         });
     </script>
