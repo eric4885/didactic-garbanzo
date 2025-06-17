@@ -3,894 +3,1262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Directory - Discover the Best AI Tools</title>
-    <meta name="description" content="Discover and explore the best AI tools and applications. Your comprehensive directory for artificial intelligence solutions.">
-    <link rel="canonical" href="https://ai-tools-directory.com">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'apple-blue': '#007AFF',
-                        'apple-gray': '#8E8E93',
-                        'apple-light-gray': '#F2F2F7',
-                        'apple-dark': '#1C1C1E',
-                        'apple-green': '#34C759',
-                        'apple-orange': '#FF9500',
-                        'apple-red': '#FF3B30',
-                        'apple-purple': '#AF52DE'
-                    }
-                }
+    <title>ToolAI.my - Your Complete AI Tools Directory</title>
+    <meta name="description" content="Discover the best AI tools, models, and applications. Your comprehensive directory for artificial intelligence solutions, from image generation to business automation.">
+    <meta name="keywords" content="AI tools, artificial intelligence, machine learning, AI models, AI applications, AI directory, AI navigation">
+    <link rel="canonical" href="https://toolai.my">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ToolAI.my - Your Complete AI Tools Directory">
+    <meta property="og:description" content="Discover the best AI tools, models, and applications for every need.">
+    <meta property="og:url" content="https://toolai.my">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        /* Apple Design System Variables */
+        :root {
+            --apple-blue: #007AFF;
+            --apple-green: #34C759;
+            --apple-orange: #FF9500;
+            --apple-red: #FF3B30;
+            --apple-purple: #AF52DE;
+            --apple-pink: #FF2D92;
+            --apple-yellow: #FFCC00;
+            --apple-teal: #5AC8FA;
+            --apple-indigo: #5856D6;
+            
+            --apple-gray-1: #8E8E93;
+            --apple-gray-2: #AEAEB2;
+            --apple-gray-3: #C7C7CC;
+            --apple-gray-4: #D1D1D6;
+            --apple-gray-5: #E5E5EA;
+            --apple-gray-6: #F2F2F7;
+            
+            --apple-dark: #1C1C1E;
+            --apple-dark-gray: #2C2C2E;
+            --apple-dark-elevated: #3A3A3C;
+            
+            --text-primary: #000000;
+            --text-secondary: #6D6D80;
+            --text-tertiary: #8E8E93;
+            --background-primary: #FFFFFF;
+            --background-secondary: #F8F9FA;
+            --background-tertiary: #F2F2F7;
+            
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-medium: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-heavy: 0 8px 30px rgba(0,0,0,0.15);
+            
+            --border-radius-small: 8px;
+            --border-radius-medium: 12px;
+            --border-radius-large: 16px;
+            --border-radius-xlarge: 24px;
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #FFFFFF;
+                --text-secondary: #98989D;
+                --text-tertiary: #6D6D80;
+                --background-primary: #000000;
+                --background-secondary: #1C1C1E;
+                --background-tertiary: #2C2C2E;
             }
         }
-    </script>
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .apple-blur {
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-primary);
+            overflow-x: hidden;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--apple-blue) 0%, var(--apple-purple) 50%, var(--apple-pink) 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .hover-lift {
-            transition: transform 0.2s ease-in-out;
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        .hover-lift:hover {
-            transform: translateY(-2px);
+        
+        .logo {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .category-gradient {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        
+        .logo::before {
+            content: '🤖';
+            font-size: 1.2em;
         }
+        
+        .main-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-item {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: var(--border-radius-medium);
+            position: relative;
+        }
+        
+        .nav-item:hover,
+        .nav-item.active {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius-small);
+            transition: background 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Search Bar */
+        .search-section {
+            background: var(--background-secondary);
+            padding: 40px 0;
+        }
+        
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .search-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .search-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .search-bar {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 60px 16px 20px;
+            font-size: 1.1rem;
+            border: 2px solid var(--apple-gray-5);
+            border-radius: 50px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--apple-blue);
+            box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            bottom: 4px;
+            background: var(--apple-blue);
+            border: none;
+            border-radius: 50px;
+            width: 48px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .search-btn:hover {
+            background: #0051D5;
+            transform: scale(1.05);
+        }
+        
+        /* Category Grid */
+        .categories-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-primary);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius-large);
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--border-radius-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            background: var(--gradient);
+        }
+        
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        
+        .category-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .category-count {
+            background: var(--background-tertiary);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+        
+        /* Page Content */
         .page {
             display: none;
+            padding: 40px 0;
         }
+        
         .page.active {
             display: block;
         }
-        .nav-link.active {
-            color: #007AFF;
-            font-weight: 600;
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
+        
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Tool Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: var(--border-radius-large);
+            padding: 24px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--apple-gray-5);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--apple-blue);
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 16px;
+        }
+        
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--border-radius-medium);
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .tool-info {
+            flex: 1;
+        }
+        
+        .tool-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        
+        .tool-category {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .tool-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tool-tag {
+            background: var(--background-tertiary);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--apple-blue), var(--apple-purple));
+            color: white;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            border-radius: var(--border-radius-large);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--apple-dark);
+            color: white;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--apple-gray-2);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--apple-blue);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--apple-dark-gray);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--apple-gray-1);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--apple-dark);
+                flex-direction: column;
+                padding: 20px;
+                border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+            }
+            
+            .main-nav.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-content {
+                position: relative;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .search-section {
+                padding: 30px 0;
+            }
+            
+            .categories-section {
+                padding: 40px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tool-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .category-card {
+                padding: 20px;
+            }
+            
+            .tool-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--apple-gray-5);
+            border-radius: 50%;
+            border-top-color: var(--apple-blue);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Smooth Transitions */
+        * {
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Focus Styles for Accessibility */
+        .nav-item:focus,
+        .search-input:focus,
+        .search-btn:focus,
+        .category-card:focus,
+        .tool-card:focus {
+            outline: 2px solid var(--apple-blue);
+            outline-offset: 2px;
+        }
+        
+        /* Custom Category Colors */
+        .category-card[data-category="ai-tools"] { --gradient: linear-gradient(135deg, var(--apple-blue), var(--apple-teal)); --primary-color: var(--apple-blue); }
+        .category-card[data-category="common-tools"] { --gradient: linear-gradient(135deg, var(--apple-green), var(--apple-yellow)); --primary-color: var(--apple-green); }
+        .category-card[data-category="models"] { --gradient: linear-gradient(135deg, var(--apple-purple), var(--apple-pink)); --primary-color: var(--apple-purple); }
+        .category-card[data-category="agents"] { --gradient: linear-gradient(135deg, var(--apple-orange), var(--apple-red)); --primary-color: var(--apple-orange); }
+        .category-card[data-category="toolsets"] { --gradient: linear-gradient(135deg, var(--apple-indigo), var(--apple-blue)); --primary-color: var(--apple-indigo); }
+        .category-card[data-category="community"] { --gradient: linear-gradient(135deg, var(--apple-teal), var(--apple-green)); --primary-color: var(--apple-teal); }
+        .category-card[data-category="image-tools"] { --gradient: linear-gradient(135deg, var(--apple-pink), var(--apple-red)); --primary-color: var(--apple-pink); }
+        .category-card[data-category="video-tools"] { --gradient: linear-gradient(135deg, var(--apple-yellow), var(--apple-orange)); --primary-color: var(--apple-yellow); }
+        .category-card[data-category="office-tools"] { --gradient: linear-gradient(135deg, var(--apple-blue), var(--apple-purple)); --primary-color: var(--apple-blue); }
+        .category-card[data-category="business"] { --gradient: linear-gradient(135deg, var(--apple-green), var(--apple-teal)); --primary-color: var(--apple-green); }
+        .category-card[data-category="institutions"] { --gradient: linear-gradient(135deg, var(--apple-purple), var(--apple-indigo)); --primary-color: var(--apple-purple); }
+        .category-card[data-category="competitions"] { --gradient: linear-gradient(135deg, var(--apple-orange), var(--apple-yellow)); --primary-color: var(--apple-orange); }
     </style>
 </head>
-<body class="bg-apple-light-gray min-h-screen">
+<body>
     <!-- Header -->
-    <header class="bg-white/90 apple-blur border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-4">
-                    <div class="w-8 h-8 bg-gradient-to-r from-apple-blue to-apple-purple rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 2.982.786 4.789A1 1 0 0113 13GHz" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h1 class="text-xl font-semibold text-apple-dark cursor-pointer" onclick="showPage('home')">AI Tools Directory</h1>
-                </div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="showPage('home')">ToolAI.my</a>
                 
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('tools')">Tools</a>
-                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('categories')">Categories</a>
-                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('trending')">Trending</a>
-                    <a href="#" class="nav-link text-apple-gray hover:text-apple-blue transition-colors" onclick="showPage('about')">About</a>
+                <nav class="main-nav" id="mainNav">
+                    <a href="#" class="nav-item active" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-item" onclick="showPage('ai-tools')">AI Tools</a>
+                    <a href="#" class="nav-item" onclick="showPage('models')">Models</a>
+                    <a href="#" class="nav-item" onclick="showPage('community')">Community</a>
+                    <a href="#" class="nav-item" onclick="showPage('web-navigation')">Web Nav</a>
+                    <a href="#" class="nav-item" onclick="showPage('academic')">Academic</a>
                 </nav>
                 
-                <button class="md:hidden p-2 rounded-lg bg-apple-light-gray" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6 text-apple-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
-            <div class="px-4 py-2 space-y-2">
-                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('tools')">Tools</a>
-                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('categories')">Categories</a>
-                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('trending')">Trending</a>
-                <a href="#" class="block py-2 text-apple-gray hover:text-apple-blue" onclick="showPage('about')">About</a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             </div>
         </div>
     </header>
 
     <!-- Home Page -->
     <div id="home" class="page active">
-        <!-- Hero Section -->
-        <section class="gradient-bg py-16 lg:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl lg:text-6xl font-bold text-white mb-6">
-                    Discover the Best
-                    <span class="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                        AI Tools
-                    </span>
-                </h1>
-                <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-                    Your comprehensive directory for artificial intelligence solutions. Find, compare, and explore cutting-edge AI tools for every need.
-                </p>
-                
-                <!-- Search Bar -->
-                <div class="max-w-2xl mx-auto relative">
-                    <div class="relative">
-                        <input 
-                            type="text" 
-                            id="searchInput"
-                            placeholder="Search AI tools, categories, or features..."
-                            class="w-full px-6 py-4 text-lg rounded-full border-0 bg-white/95 apple-blur shadow-lg focus:outline-none focus:ring-4 focus:ring-apple-blue/30 placeholder-apple-gray"
-                        >
-                        <button class="absolute right-2 top-2 p-2 bg-apple-blue rounded-full text-white hover:bg-blue-600 transition-colors" onclick="performSearch()">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </button>
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <h1 class="search-title">Discover AI Tools</h1>
+                    <p class="search-subtitle">Your comprehensive directory for the latest AI innovations and applications</p>
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search for AI tools, models, or applications..." id="searchInput">
+                        <button class="search-btn" onclick="performSearch()">🔍</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Stats Section -->
-        <section class="py-12 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <div class="text-3xl font-bold text-apple-blue mb-2">2,500+</div>
-                        <div class="text-apple-gray">AI Tools</div>
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2,500+</div>
+                        <div class="stat-label">AI Tools</div>
                     </div>
-                    <div>
-                        <div class="text-3xl font-bold text-apple-green mb-2">50+</div>
-                        <div class="text-apple-gray">Categories</div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">AI Models</div>
                     </div>
-                    <div>
-                        <div class="text-3xl font-bold text-apple-orange mb-2">1M+</div>
-                        <div class="text-apple-gray">Monthly Users</div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Categories</div>
                     </div>
-                    <div>
-                        <div class="text-3xl font-bold text-apple-purple mb-2">24/7</div>
-                        <div class="text-apple-gray">Updated</div>
+                    <div class="stat-item">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Monthly Users</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Categories Section -->
-        <section class="py-16 bg-apple-light-gray">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-apple-dark mb-12">Explore Categories</h2>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="categoriesGrid">
-                    <!-- Categories will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Tools Section -->
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center mb-12">
-                    <h2 class="text-3xl font-bold text-apple-dark">Featured AI Tools</h2>
-                    <button class="text-apple-blue hover:text-blue-600 font-medium flex items-center" onclick="showPage('tools')">
-                        View All
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="featuredTools">
-                    <!-- Featured tools will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter Section -->
-        <section class="py-16 bg-gradient-to-r from-apple-blue to-purple-600">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">Stay Updated with AI Innovation</h2>
-                <p class="text-xl text-white/90 mb-8">Get weekly updates on the latest AI tools and trends delivered to your inbox.</p>
-                
-                <div class="max-w-md mx-auto flex gap-4">
-                    <input 
-                        type="email" 
-                        id="newsletterEmail"
-                        placeholder="Enter your email"
-                        class="flex-1 px-4 py-3 rounded-xl border-0 bg-white/95 apple-blur focus:outline-none focus:ring-4 focus:ring-white/30"
-                    >
-                    <button class="px-6 py-3 bg-white text-apple-blue rounded-xl font-semibold hover:bg-gray-100 transition-colors" onclick="subscribeNewsletter()">
-                        Subscribe
-                    </button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Tools Page -->
-    <div id="tools" class="page">
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center mb-8">
-                    <h1 class="text-4xl font-bold text-apple-dark">All AI Tools</h1>
-                    <div class="flex items-center space-x-4">
-                        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent" onchange="filterTools(this.value)">
-                            <option value="">All Categories</option>
-                            <option value="writing">Writing & Content</option>
-                            <option value="image">Image & Video</option>
-                            <option value="business">Business & Productivity</option>
-                            <option value="development">Development & Code</option>
-                            <option value="marketing">Marketing & Sales</option>
-                        </select>
-                        <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-transparent" onchange="sortTools(this.value)">
-                            <option value="featured">Featured</option>
-                            <option value="rating">Highest Rated</option>
-                            <option value="newest">Newest</option>
-                            <option value="name">Name A-Z</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="toolsGrid">
-                    <!-- Tools will be populated by JavaScript -->
-                </div>
-                
-                <!-- Pagination -->
-                <div class="flex justify-center mt-12">
-                    <nav class="flex items-center space-x-2">
-                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">Previous</button>
-                        <button class="px-3 py-2 rounded-lg bg-apple-blue text-white">1</button>
-                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">2</button>
-                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">3</button>
-                        <span class="px-3 py-2">...</span>
-                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">12</button>
-                        <button class="px-3 py-2 rounded-lg bg-apple-light-gray text-apple-gray hover:bg-gray-300">Next</button>
-                    </nav>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Categories Page -->
-    <div id="categories" class="page">
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 class="text-4xl font-bold text-center text-apple-dark mb-8">Browse by Category</h1>
-                <p class="text-xl text-apple-gray text-center mb-12 max-w-3xl mx-auto">
-                    Explore AI tools organized by category to find exactly what you need for your projects and workflows.
-                </p>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="categoriesDetailGrid">
+        <section class="categories-section">
+            <div class="container">
+                <h2 class="section-title">Explore AI Categories</h2>
+                <div class="categories-grid" id="categoriesGrid">
                     <!-- Categories will be populated by JavaScript -->
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Trending Page -->
-    <div id="trending" class="page">
-        <section class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 class="text-4xl font-bold text-center text-apple-dark mb-8">Trending AI Tools</h1>
-                <p class="text-xl text-apple-gray text-center mb-12">
-                    Discover the most popular and fastest-growing AI tools in the community.
-                </p>
-                
-                <!-- Trending Stats -->
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="bg-gradient-to-r from-apple-blue to-blue-600 rounded-2xl p-8 text-white text-center">
-                        <div class="text-3xl font-bold mb-2">🔥 Hot This Week</div>
-                        <div class="text-lg opacity-90">Most visited tools in the last 7 days</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-apple-green to-green-600 rounded-2xl p-8 text-white text-center">
-                        <div class="text-3xl font-bold mb-2">📈 Rising Stars</div>
-                        <div class="text-lg opacity-90">Fastest growing in popularity</div>
-                    </div>
-                    <div class="bg-gradient-to-r from-apple-purple to-purple-600 rounded-2xl p-8 text-white text-center">
-                        <div class="text-3xl font-bold mb-2">⭐ Top Rated</div>
-                        <div class="text-lg opacity-90">Highest user ratings this month</div>
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="trendingTools">
-                    <!-- Trending tools will be populated by JavaScript -->
-                </div>
+    <!-- AI Tools Page -->
+    <div id="ai-tools" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">AI Tools Recommendations</h1>
+                <p class="page-description">Discover the most innovative and useful AI tools across various categories</p>
             </div>
-        </section>
+            <div class="tools-grid" id="aiToolsGrid">
+                <!-- AI Tools will be populated by JavaScript -->
+            </div>
+        </div>
     </div>
 
-    <!-- About Page -->
-    <div id="about" class="page">
-        <section class="py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 class="text-4xl font-bold text-center text-apple-dark mb-8">About AI Tools Directory</h1>
-                
-                <div class="prose prose-lg mx-auto text-apple-gray">
-                    <p class="text-xl leading-relaxed mb-8">
-                        Welcome to AI Tools Directory, your comprehensive guide to discovering and exploring the best artificial intelligence tools and applications available today.
-                    </p>
-                    
-                    <h2 class="text-2xl font-bold text-apple-dark mb-4">Our Mission</h2>
-                    <p class="mb-6">
-                        We believe that AI technology should be accessible to everyone. Our mission is to democratize access to AI tools by providing a curated, easy-to-navigate directory that helps users find the perfect AI solution for their needs.
-                    </p>
-                    
-                    <h2 class="text-2xl font-bold text-apple-dark mb-4">What We Offer</h2>
-                    <ul class="list-disc pl-6 mb-6 space-y-2">
-                        <li>Comprehensive database of 2,500+ AI tools across 50+ categories</li>
-                        <li>Detailed reviews and ratings from our community</li>
-                        <li>Regular updates on the latest AI innovations</li>
-                        <li>Comparison tools to help you make informed decisions</li>
-                        <li>Educational resources and tutorials</li>
-                    </ul>
-                    
-                    <h2 class="text-2xl font-bold text-apple-dark mb-4">Our Team</h2>
-                    <p class="mb-6">
-                        Our team consists of AI researchers, developers, and enthusiasts who are passionate about making AI technology more accessible. We continuously research and evaluate new tools to ensure our directory remains the most comprehensive and up-to-date resource available.
-                    </p>
-                    
-                    <h2 class="text-2xl font-bold text-apple-dark mb-4">Contact Us</h2>
-                    <p class="mb-6">
-                        Have a question or want to submit a new AI tool for review? We'd love to hear from you!
-                    </p>
-                    
-                    <div class="bg-apple-light-gray rounded-2xl p-8 text-center">
-                        <h3 class="text-xl font-semibold text-apple-dark mb-4">Get in Touch</h3>
-                        <div class="space-y-2">
-                            <p>📧 Email: contact@ai-tools-directory.com</p>
-                            <p>🐦 Twitter: @AIToolsDir</p>
-                            <p>💼 LinkedIn: AI Tools Directory</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Models Page -->
+    <div id="models" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">AI Models & Large Language Models</h1>
+                <p class="page-description">Explore cutting-edge AI models and language models powering the future</p>
             </div>
-        </section>
+            <div class="tools-grid" id="modelsGrid">
+                <!-- Models will be populated by JavaScript -->
+            </div>
+        </div>
     </div>
 
-    <!-- Tool Detail Modal -->
-    <div id="toolModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" onclick="closeToolModal()">
-        <div class="max-w-4xl mx-auto mt-8 mb-8 bg-white rounded-2xl shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-            <div id="toolModalContent">
-                <!-- Tool details will be populated by JavaScript -->
+    <!-- Community Page -->
+    <div id="community" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">AI Developer Community</h1>
+                <p class="page-description">Connect with AI developers, researchers, and enthusiasts worldwide</p>
+            </div>
+            <div class="tools-grid" id="communityGrid">
+                <!-- Community tools will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Navigation Page -->
+    <div id="web-navigation" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Web Navigation & Utilities</h1>
+                <p class="page-description">Essential web tools and navigation resources for everyday use</p>
+            </div>
+            <div class="tools-grid" id="webNavGrid">
+                <!-- Web navigation tools will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Academic Page -->
+    <div id="academic" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Academic & Research Resources</h1>
+                <p class="page-description">Academic tools, research platforms, and educational resources</p>
+            </div>
+            <div class="tools-grid" id="academicGrid">
+                <!-- Academic tools will be populated by JavaScript -->
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-apple-dark text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-gradient-to-r from-apple-blue to-apple-purple rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 2.982.786 4.789A1 1 0 0113 13GHhz" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <span class="text-xl font-semibold">AI Tools Directory</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Your comprehensive directory for discovering and exploring the best AI tools and applications.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ToolAI.my</h3>
+                    <p style="color: var(--apple-gray-2); line-height: 1.6;">Your comprehensive directory for discovering and exploring the best AI tools, models, and applications available today.</p>
                 </div>
                 
-                <div>
-                    <h3 class="font-semibold mb-4">Categories</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('writing')">Writing & Content</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('image')">Image & Video</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('business')">Business Tools</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors" onclick="showCategoryTools('development')">Development</a></li>
+                <div class="footer-section">
+                    <h3>Popular Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showCategoryPage('ai-tools')">AI Tools</a></li>
+                        <li><a href="#" onclick="showCategoryPage('models')">Large Language Models</a></li>
+                        <li><a href="#" onclick="showCategoryPage('image-tools')">AI Image Tools</a></li>
+                        <li><a href="#" onclick="showCategoryPage('video-tools')">AI Video Tools</a></li>
+                        <li><a href="#" onclick="showCategoryPage('office-tools')">AI Office Tools</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 class="font-semibold mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">AI News</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Tutorials</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Compare Tools</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Submit Tool</a></li>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('community')">Developer Community</a></li>
+                        <li><a href="#" onclick="showPage('academic')">Academic Resources</a></li>
+                        <li><a href="#" onclick="showPage('web-navigation')">Web Navigation</a></li>
+                        <li><a href="#" onclick="showCategoryPage('competitions')">AI Competitions</a></li>
+                        <li><a href="#" onclick="showCategoryPage('institutions')">AI Institutions</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 class="font-semibold mb-4">Company</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors" onclick="showPage('about')">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#submit">Submit Tool</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 AI Tools Directory. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ToolAI.my. All rights reserved. | Your gateway to the AI revolution.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Sample data
+        // Data Structure
         const categories = [
             {
-                id: 'writing',
-                name: 'Writing & Content',
-                description: 'AI writing assistants and content generators',
-                count: 324,
-                color: 'from-apple-blue to-blue-600',
-                icon: `<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>`
+                id: 'ai-tools',
+                title: 'AI Tools Recommendations',
+                description: 'Curated collection of the most innovative and useful AI tools',
+                icon: '🤖',
+                count: '500+',
+                tools: 'ai-tools'
             },
             {
-                id: 'image',
-                name: 'Image & Video',
-                description: 'Visual AI tools for creation and editing',
-                count: 256,
-                color: 'from-apple-green to-green-600',
-                icon: `<path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>`
+                id: 'common-tools',
+                title: 'Common Tools',
+                description: 'Essential everyday tools and utilities for productivity',
+                icon: '🛠️',
+                count: '300+',
+                tools: 'common-tools'
+            },
+            {
+                id: 'models',
+                title: 'Large Language Models',
+                description: 'Advanced AI models and language processing systems',
+                icon: '🧠',
+                count: '150+',
+                tools: 'models'
+            },
+            {
+                id: 'agents',
+                title: 'AI Agents',
+                description: 'Intelligent agents and autonomous AI systems',
+                icon: '🤵',
+                count: '120+',
+                tools: 'agents'
+            },
+            {
+                id: 'toolsets',
+                title: 'AI Tool Collections',
+                description: 'Comprehensive toolsets and integrated AI platforms',
+                icon: '📦',
+                count: '80+',
+                tools: 'toolsets'
+            },
+            {
+                id: 'community',
+                title: 'AI Developer Community',
+                description: 'Platforms for AI developers and researchers',
+                icon: '👥',
+                count: '200+',
+                tools: 'community'
+            },
+            {
+                id: 'image-tools',
+                title: 'AI Image Tools',
+                description: 'Image generation, editing, and processing tools',
+                icon: '🎨',
+                count: '180+',
+                tools: 'image-tools'
+            },
+            {
+                id: 'video-tools',
+                title: 'AI Video Tools',
+                description: 'Video creation, editing, and enhancement tools',
+                icon: '🎬',
+                count: '100+',
+                tools: 'video-tools'
+            },
+            {
+                id: 'office-tools',
+                title: 'AI Office Tools',
+                description: 'Productivity and business automation tools',
+                icon: '💼',
+                count: '220+',
+                tools: 'office-tools'
             },
             {
                 id: 'business',
-                name: 'Business & Productivity',
-                description: 'Streamline workflows and boost efficiency',
-                count: 198,
-                color: 'from-apple-purple to-purple-600',
-                icon: `<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>`
+                title: 'AI Business Services',
+                description: 'Enterprise AI solutions and business applications',
+                icon: '🏢',
+                count: '160+',
+                tools: 'business'
             },
             {
-                id: 'marketing',
-                name: 'Marketing & Sales',
-                description: 'AI-powered marketing automation',
-                count: 167,
-                color: 'from-apple-orange to-orange-600',
-                icon: `<path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>`
+                id: 'institutions',
+                title: 'AI Authoritative Institutions',
+                description: 'Leading AI research institutions and organizations',
+                icon: '🏛️',
+                count: '50+',
+                tools: 'institutions'
             },
             {
-                id: 'development',
-                name: 'Development & Code',
-                description: 'AI coding assistants and development tools',
-                count: 143,
-                color: 'from-apple-red to-red-600',
-                icon: `<path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>`
-            },
-            {
-                id: 'data',
-                name: 'Data & Analytics',
-                description: 'Intelligent data analysis and insights',
-                count: 89,
-                color: 'from-indigo-500 to-indigo-600',
-                icon: `<path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z M4 5a2 2 0 012-2v1a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V6a2 2 0 00-2-2V3a2 2 0 012-2 2 2 0 012 2v1a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>`
-            },
-            {
-                id: 'security',
-                name: 'Security & Privacy',
-                description: 'AI-powered security solutions',
-                count: 76,
-                color: 'from-pink-500 to-pink-600',
-                icon: `<path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>`
-            },
-            {
-                id: 'education',
-                name: 'Education & Learning',
-                description: 'AI tutors and educational platforms',
-                count: 112,
-                color: 'from-teal-500 to-teal-600',
-                icon: `<path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>`
+                id: 'competitions',
+                title: 'AI Competitions',
+                description: 'AI challenges, contests, and competitions',
+                icon: '🏆',
+                count: '40+',
+                tools: 'competitions'
             }
         ];
 
-        const tools = [
-            {
-                id: 1,
-                name: 'ChatGPT',
-                description: 'Advanced conversational AI that can help with writing, analysis, coding, and creative tasks.',
-                category: 'writing',
-                rating: 4.9,
-                reviews: 12000,
-                pricing: 'Free',
-                color: 'from-apple-blue to-blue-600',
-                features: ['Natural Language Processing', 'Code Generation', 'Creative Writing', 'Data Analysis'],
-                website: 'https://chat.openai.com',
-                isFeatured: true,
-                trending: true
-            },
-            {
-                id: 2,
-                name: 'Midjourney',
-                description: 'Create stunning, high-quality images from text descriptions with advanced AI image generation.',
-                category: 'image',
-                rating: 4.8,
-                reviews: 8500,
-                pricing: 'Premium',
-                color: 'from-apple-purple to-purple-600',
-                features: ['Text-to-Image', 'High Resolution', 'Artistic Styles', 'Commercial Use'],
-                website: 'https://midjourney.com',
-                isFeatured: true,
-                trending: true
-            },
-            {
-                id: 3,
-                name: 'GitHub Copilot',
-                description: 'AI-powered code completion and programming assistant that helps developers write code faster.',
-                category: 'development',
-                rating: 4.7,
-                reviews: 15000,
-                pricing: 'Premium',
-                color: 'from-apple-green to-green-600',
-                features: ['Code Completion', 'Multiple Languages', 'IDE Integration', 'Context-Aware'],
-                website: 'https://github.com/copilot',
-                isFeatured: true,
-                trending: false
-            },
-            {
-                id: 4,
-                name: 'Jasper AI',
-                description: 'AI writing assistant for marketing copy, blog posts, and creative content creation.',
-                category: 'writing',
-                rating: 4.6,
-                reviews: 5200,
-                pricing: 'Premium',
-                color: 'from-apple-orange to-orange-600',
-                features: ['Content Templates', 'Brand Voice', 'SEO Optimization', 'Team Collaboration'],
-                website: 'https://jasper.ai',
-                isFeatured: false,
-                trending: true
-            },
-            {
-                id: 5,
-                name: 'Tableau AI',
-                description: 'Transform data into actionable insights with AI-powered analytics and visualization.',
-                category: 'data',
-                rating: 4.5,
-                reviews: 3800,
-                pricing: 'Enterprise',
-                color: 'from-indigo-500 to-indigo-600',
-                features: ['Data Visualization', 'Predictive Analytics', 'Natural Language Queries', 'Dashboard Creation'],
-                website: 'https://tableau.com',
-                isFeatured: false,
-                trending: false
-            },
-            {
-                id: 6,
-                name: 'HubSpot AI',
-                description: 'AI-powered marketing automation and customer relationship management platform.',
-                category: 'marketing',
-                rating: 4.4,
-                reviews: 7200,
-                pricing: 'Freemium',
-                color: 'from-apple-red to-red-600',
-                features: ['Lead Scoring', 'Email Automation', 'Chatbot Builder', 'Sales Pipeline'],
-                website: 'https://hubspot.com',
-                isFeatured: false,
-                trending: true
-            }
-        ];
+        const toolsData = {
+            'ai-tools': [
+                {
+                    name: 'ChatGPT',
+                    category: 'Conversational AI',
+                    description: 'Advanced conversational AI assistant for writing, analysis, and creative tasks',
+                    tags: ['Chat', 'Writing', 'Analysis', 'Creative'],
+                    url: 'https://chat.openai.com'
+                },
+                {
+                    name: 'Claude',
+                    category: 'AI Assistant',
+                    description: 'Anthropic\'s AI assistant focused on being helpful, harmless, and honest',
+                    tags: ['Assistant', 'Safe AI', 'Conversation'],
+                    url: 'https://claude.ai'
+                },
+                {
+                    name: 'Gemini',
+                    category: 'Multimodal AI',
+                    description: 'Google\'s advanced multimodal AI for text, images, and code',
+                    tags: ['Multimodal', 'Google', 'Advanced'],
+                    url: 'https://gemini.google.com'
+                },
+                {
+                    name: 'Perplexity AI',
+                    category: 'Search AI',
+                    description: 'AI-powered search engine that provides accurate, real-time answers',
+                    tags: ['Search', 'Real-time', 'Research'],
+                    url: 'https://perplexity.ai'
+                }
+            ],
+            'models': [
+                {
+                    name: 'GPT-4',
+                    category: 'Language Model',
+                    description: 'OpenAI\'s most advanced language model with superior reasoning capabilities',
+                    tags: ['OpenAI', 'Advanced', 'Reasoning'],
+                    url: 'https://openai.com/gpt-4'
+                },
+                {
+                    name: 'Claude 3.5 Sonnet',
+                    category: 'Language Model',
+                    description: 'Anthropic\'s most capable model for complex reasoning and analysis',
+                    tags: ['Anthropic', 'Reasoning', 'Safe'],
+                    url: 'https://anthropic.com'
+                },
+                {
+                    name: 'Llama 3',
+                    category: 'Open Source Model',
+                    description: 'Meta\'s open-source large language model for various applications',
+                    tags: ['Meta', 'Open Source', 'Versatile'],
+                    url: 'https://llama.meta.com'
+                },
+                {
+                    name: 'Gemini Pro',
+                    category: 'Multimodal Model',
+                    description: 'Google\'s advanced multimodal model for enterprise applications',
+                    tags: ['Google', 'Multimodal', 'Enterprise'],
+                    url: 'https://ai.google.dev'
+                }
+            ],
+            'image-tools': [
+                {
+                    name: 'Midjourney',
+                    category: 'Image Generation',
+                    description: 'High-quality AI image generation from text descriptions',
+                    tags: ['Art', 'Creative', 'High Quality'],
+                    url: 'https://midjourney.com'
+                },
+                {
+                    name: 'DALL-E 3',
+                    category: 'Image Generation',
+                    description: 'OpenAI\'s advanced text-to-image generation model',
+                    tags: ['OpenAI', 'Text-to-Image', 'Creative'],
+                    url: 'https://openai.com/dall-e-3'
+                },
+                {
+                    name: 'Stable Diffusion',
+                    category: 'Open Source',
+                    description: 'Open-source image generation model with community support',
+                    tags: ['Open Source', 'Community', 'Flexible'],
+                    url: 'https://stability.ai'
+                },
+                {
+                    name: 'Adobe Firefly',
+                    category: 'Creative Suite',
+                    description: 'Adobe\'s AI-powered creative tools for image generation and editing',
+                    tags: ['Adobe', 'Professional', 'Integrated'],
+                    url: 'https://firefly.adobe.com'
+                }
+            ],
+            'video-tools': [
+                {
+                    name: 'Runway ML',
+                    category: 'Video Generation',
+                    description: 'AI-powered video creation and editing platform',
+                    tags: ['Video', 'Creative', 'Professional'],
+                    url: 'https://runwayml.com'
+                },
+                {
+                    name: 'Synthesia',
+                    category: 'Avatar Videos',
+                    description: 'Create professional videos with AI avatars and voiceovers',
+                    tags: ['Avatars', 'Professional', 'Multilingual'],
+                    url: 'https://synthesia.io'
+                },
+                {
+                    name: 'Luma Dream Machine',
+                    category: 'Video Generation',
+                    description: 'Generate realistic videos from text prompts',
+                    tags: ['Realistic', 'Text-to-Video', 'High Quality'],
+                    url: 'https://lumalabs.ai'
+                },
+                {
+                    name: 'Pika Labs',
+                    category: 'Video Creation',
+                    description: 'Transform images and text into engaging video content',
+                    tags: ['Creative', 'Easy', 'Engaging'],
+                    url: 'https://pika.art'
+                }
+            ],
+            'office-tools': [
+                {
+                    name: 'Notion AI',
+                    category: 'Productivity',
+                    description: 'AI-powered workspace for notes, docs, and project management',
+                    tags: ['Productivity', 'Workspace', 'Collaboration'],
+                    url: 'https://notion.so'
+                },
+                {
+                    name: 'Grammarly',
+                    category: 'Writing Assistant',
+                    description: 'AI writing assistant for grammar, style, and clarity',
+                    tags: ['Writing', 'Grammar', 'Professional'],
+                    url: 'https://grammarly.com'
+                },
+                {
+                    name: 'Gamma',
+                    category: 'Presentations',
+                    description: 'AI-powered presentation and document creation',
+                    tags: ['Presentations', 'Professional', 'Quick'],
+                    url: 'https://gamma.app'
+                },
+                {
+                    name: 'Jasper',
+                    category: 'Content Creation',
+                    description: 'AI content creation platform for marketing and business',
+                    tags: ['Marketing', 'Content', 'Business'],
+                    url: 'https://jasper.ai'
+                }
+            ],
+            'community': [
+                {
+                    name: 'Hugging Face',
+                    category: 'AI Community',
+                    description: 'Open platform for AI models, datasets, and applications',
+                    tags: ['Open Source', 'Models', 'Community'],
+                    url: 'https://huggingface.co'
+                },
+                {
+                    name: 'GitHub',
+                    category: 'Development',
+                    description: 'World\'s largest community of developers and AI projects',
+                    tags: ['Development', 'Open Source', 'Collaboration'],
+                    url: 'https://github.com'
+                },
+                {
+                    name: 'Kaggle',
+                    category: 'Data Science',
+                    description: 'Platform for data science competitions and learning',
+                    tags: ['Data Science', 'Competitions', 'Learning'],
+                    url: 'https://kaggle.com'
+                },
+                {
+                    name: 'Papers with Code',
+                    category: 'Research',
+                    description: 'Free resource for machine learning papers and code',
+                    tags: ['Research', 'Papers', 'Open Source'],
+                    url: 'https://paperswithcode.com'
+                }
+            ],
+            'common-tools': [
+                {
+                    name: 'Google Drive',
+                    category: 'Cloud Storage',
+                    description: 'Cloud storage and collaboration platform by Google',
+                    tags: ['Storage', 'Collaboration', 'Google'],
+                    url: 'https://drive.google.com'
+                },
+                {
+                    name: 'Canva',
+                    category: 'Design',
+                    description: 'Easy-to-use design platform with AI-powered features',
+                    tags: ['Design', 'Templates', 'Easy'],
+                    url: 'https://canva.com'
+                },
+                {
+                    name: 'Figma',
+                    category: 'Design Tool',
+                    description: 'Collaborative interface design tool with AI features',
+                    tags: ['UI/UX', 'Collaboration', 'Professional'],
+                    url: 'https://figma.com'
+                },
+                {
+                    name: 'Zoom',
+                    category: 'Communication',
+                    description: 'Video conferencing platform with AI transcription',
+                    tags: ['Video Call', 'Meeting', 'Business'],
+                    url: 'https://zoom.us'
+                }
+            ]
+        };
 
         let currentPage = 'home';
-        let filteredTools = tools;
 
-        // Navigation functions
-        function showPage(page) {
+        // Navigation Functions
+        function showPage(pageId) {
             // Hide all pages
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
             
             // Show selected page
-            document.getElementById(page).classList.add('active');
+            document.getElementById(pageId).classList.add('active');
             
             // Update navigation
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-            document.querySelector(`[onclick="showPage('${page}')"]`)?.classList.add('active');
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
             
-            currentPage = page;
+            event.target.classList.add('active');
+            currentPage = pageId;
             
             // Populate page content
-            if (page === 'home') {
-                populateHomeCategories();
-                populateFeaturedTools();
-            } else if (page === 'tools') {
-                populateAllTools();
-            } else if (page === 'categories') {
-                populateCategoriesDetail();
-            } else if (page === 'trending') {
-                populateTrendingTools();
-            }
+            populatePageContent(pageId);
             
-            // Hide mobile menu if open
-            document.getElementById('mobileMenu').classList.add('hidden');
+            // Close mobile menu if open
+            document.getElementById('mainNav').classList.remove('active');
+        }
+
+        function showCategoryPage(categoryId) {
+            const category = categories.find(cat => cat.id === categoryId);
+            if (!category) return;
+            
+            // Show appropriate page based on category
+            if (['ai-tools', 'models', 'community'].includes(categoryId)) {
+                showPage(categoryId);
+            } else {
+                // Show tools page with filtered content
+                showPage('ai-tools');
+                populateToolsGrid('aiToolsGrid', categoryId);
+            }
         }
 
         function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+            document.getElementById('mainNav').classList.toggle('active');
         }
 
-        // Populate functions
-        function populateHomeCategories() {
+        // Content Population Functions
+        function populatePageContent(pageId) {
+            switch(pageId) {
+                case 'home':
+                    populateCategories();
+                    break;
+                case 'ai-tools':
+                    populateToolsGrid('aiToolsGrid', 'ai-tools');
+                    break;
+                case 'models':
+                    populateToolsGrid('modelsGrid', 'models');
+                    break;
+                case 'community':
+                    populateToolsGrid('communityGrid', 'community');
+                    break;
+                case 'web-navigation':
+                    populateToolsGrid('webNavGrid', 'common-tools');
+                    break;
+                case 'academic':
+                    populateToolsGrid('academicGrid', 'community');
+                    break;
+            }
+        }
+
+        function populateCategories() {
             const grid = document.getElementById('categoriesGrid');
-            grid.innerHTML = categories.map(cat => `
-                <div class="category-card bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer" onclick="showCategoryTools('${cat.id}')">
-                    <div class="w-12 h-12 bg-gradient-to-r ${cat.color} rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            ${cat.icon}
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold text-apple-dark mb-2">${cat.name}</h3>
-                    <p class="text-sm text-apple-gray mb-3">${cat.description}</p>
-                    <div class="text-xs text-${cat.color.split('-')[1]} font-medium">${cat.count} tools</div>
+            grid.innerHTML = categories.map(category => `
+                <div class="category-card" data-category="${category.id}" onclick="showCategoryPage('${category.id}')" tabindex="0">
+                    <div class="category-icon">${category.icon}</div>
+                    <h3 class="category-title">${category.title}</h3>
+                    <p class="category-description">${category.description}</p>
+                    <span class="category-count">${category.count} tools</span>
                 </div>
             `).join('');
         }
 
-        function populateFeaturedTools() {
-            const grid = document.getElementById('featuredTools');
-            const featured = tools.filter(tool => tool.isFeatured);
-            grid.innerHTML = featured.map(tool => createToolCard(tool)).join('');
-        }
-
-        function populateAllTools() {
-            const grid = document.getElementById('toolsGrid');
-            grid.innerHTML = filteredTools.map(tool => createToolCard(tool)).join('');
-        }
-
-        function populateCategoriesDetail() {
-            const grid = document.getElementById('categoriesDetailGrid');
-            grid.innerHTML = categories.map(cat => `
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover-lift cursor-pointer" onclick="showCategoryTools('${cat.id}')">
-                    <div class="w-16 h-16 bg-gradient-to-r ${cat.color} rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            ${cat.icon}
-                        </svg>
+        function populateToolsGrid(gridId, category) {
+            const grid = document.getElementById(gridId);
+            const tools = toolsData[category] || [];
+            
+            if (tools.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--text-secondary);">Content Loading</h3>
+                        <p style="color: var(--text-tertiary);">Tools and resources are being updated. Please check back soon!</p>
+                        <div class="loading" style="margin: 20px auto;"></div>
                     </div>
-                    <h3 class="text-2xl font-bold text-apple-dark mb-4">${cat.name}</h3>
-                    <p class="text-apple-gray mb-6">${cat.description}</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-3xl font-bold text-${cat.color.split('-')[1]}">${cat.count}</span>
-                        <span class="text-apple-gray">tools available</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function populateTrendingTools() {
-            const grid = document.getElementById('trendingTools');
-            const trending = tools.filter(tool => tool.trending);
-            grid.innerHTML = trending.map((tool, index) => `
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover-lift cursor-pointer relative" onclick="showToolDetail(${tool.id})">
-                    <div class="absolute top-4 right-4">
-                        <span class="bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full">
-                            🔥 #${index + 1} Trending
-                        </span>
-                    </div>
-                    <div class="h-32 bg-gradient-to-r ${tool.color} rounded-xl flex items-center justify-center mb-4">
-                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                            <span class="text-2xl font-bold text-gray-800">${tool.name.charAt(0)}</span>
+                `;
+                return;
+            }
+            
+            grid.innerHTML = tools.map(tool => `
+                <div class="tool-card" onclick="openTool('${tool.url}')" tabindex="0">
+                    <div class="tool-header">
+                        <div class="tool-icon">${tool.name.charAt(0)}</div>
+                        <div class="tool-info">
+                            <div class="tool-name">${tool.name}</div>
+                            <div class="tool-category">${tool.category}</div>
                         </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-apple-dark mb-2">${tool.name}</h3>
-                    <p class="text-apple-gray mb-4">${tool.description}</p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-sm text-apple-gray">
-                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                            </svg>
-                            ${tool.rating} (${tool.reviews.toLocaleString()} reviews)
-                        </div>
-                        <span class="bg-apple-${tool.pricing === 'Free' ? 'green' : tool.pricing === 'Premium' ? 'orange' : 'purple'} text-white text-xs px-2 py-1 rounded-full">${tool.pricing}</span>
+                    <p class="tool-description">${tool.description}</p>
+                    <div class="tool-tags">
+                        ${tool.tags.map(tag => `<span class="tool-tag">${tag}</span>`).join('')}
                     </div>
                 </div>
             `).join('');
         }
 
-        function createToolCard(tool) {
-            return `
-                <div class="bg-apple-light-gray rounded-2xl overflow-hidden hover-lift cursor-pointer" onclick="showToolDetail(${tool.id})">
-                    <div class="h-48 bg-gradient-to-r ${tool.color} flex items-center justify-center">
-                        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
-                            <span class="text-2xl font-bold text-gray-800">${tool.name.charAt(0)}</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-xl font-semibold text-apple-dark">${tool.name}</h3>
-                            <span class="bg-apple-${tool.pricing === 'Free' ? 'green' : tool.pricing === 'Premium' ? 'orange' : 'purple'} text-white text-xs px-2 py-1 rounded-full">${tool.pricing}</span>
-                        </div>
-                        <p class="text-apple-gray mb-4">${tool.description}</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-apple-gray">
-                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                </svg>
-                                ${tool.rating} (${tool.reviews.toLocaleString()} reviews)
-                            </div>
-                            <button class="text-apple-blue hover:text-blue-600 font-medium">Try Now</button>
-                        </div>
-                    </div>
-                </div>
-            `;
+        // Utility Functions
+        function openTool(url) {
+            window.open(url, '_blank');
         }
 
-        // Tool detail modal
-        function showToolDetail(toolId) {
-            const tool = tools.find(t => t.id === toolId);
-            if (!tool) return;
-            
-            const modal = document.getElementById('toolModal');
-            const content = document.getElementById('toolModalContent');
-            
-            content.innerHTML = `
-                <div class="h-64 bg-gradient-to-r ${tool.color} flex items-center justify-center relative">
-                    <button class="absolute top-4 right-4 text-white hover:bg-white/20 rounded-full p-2" onclick="closeToolModal()">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                    <div class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center">
-                        <span class="text-4xl font-bold text-gray-800">${tool.name.charAt(0)}</span>
-                    </div>
-                </div>
-                <div class="p-8">
-                    <div class="flex items-center justify-between mb-6">
-                        <h1 class="text-3xl font-bold text-apple-dark">${tool.name}</h1>
-                        <span class="bg-apple-${tool.pricing === 'Free' ? 'green' : tool.pricing === 'Premium' ? 'orange' : 'purple'} text-white px-4 py-2 rounded-full">${tool.pricing}</span>
-                    </div>
-                    
-                    <p class="text-lg text-apple-gray mb-6">${tool.description}</p>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <div>
-                            <h3 class="text-xl font-semibold text-apple-dark mb-4">Key Features</h3>
-                            <ul class="space-y-2">
-                                ${tool.features.map(feature => `
-                                    <li class="flex items-center text-apple-gray">
-                                        <svg class="w-4 h-4 text-apple-green mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        ${feature}
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-semibold text-apple-dark mb-4">Details</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center">
-                                    <svg class="w-4 h-4 text-apple-blue mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                    </svg>
-                                    <span class="text-apple-gray">${tool.rating}/5.0 (${tool.reviews.toLocaleString()} reviews)</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <svg class="w-4 h-4 text-apple-green mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span class="text-apple-gray">Category: ${categories.find(c => c.id === tool.category)?.name}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-4">
-                        <a href="${tool.website}" target="_blank" class="bg-apple-blue text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors">
-                            Visit Website
-                        </a>
-                        <button class="bg-apple-light-gray text-apple-dark px-6 py-3 rounded-xl font-semibold hover:bg-gray-300 transition-colors">
-                            Add to Favorites
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            modal.classList.remove('hidden');
-        }
-
-        function closeToolModal() {
-            document.getElementById('toolModal').classList.add('hidden');
-        }
-
-        // Category filtering
-        function showCategoryTools(categoryId) {
-            showPage('tools');
-            filterTools(categoryId);
-            
-            // Update category filter dropdown
-            const categorySelect = document.querySelector('select[onchange="filterTools(this.value)"]');
-            if (categorySelect) {
-                categorySelect.value = categoryId;
-            }
-        }
-
-        function filterTools(category) {
-            if (category === '') {
-                filteredTools = tools;
-            } else {
-                filteredTools = tools.filter(tool => tool.category === category);
-            }
-            
-            if (currentPage === 'tools') {
-                populateAllTools();
-            }
-        }
-
-        function sortTools(sortBy) {
-            switch (sortBy) {
-                case 'rating':
-                    filteredTools.sort((a, b) => b.rating - a.rating);
-                    break;
-                case 'newest':
-                    filteredTools.sort((a, b) => b.id - a.id);
-                    break;
-                case 'name':
-                    filteredTools.sort((a, b) => a.name.localeCompare(b.name));
-                    break;
-                default: // featured
-                    filteredTools.sort((a, b) => {
-                        if (a.isFeatured && !b.isFeatured) return -1;
-                        if (!a.isFeatured && b.isFeatured) return 1;
-                        return b.rating - a.rating;
-                    });
-            }
-            
-            if (currentPage === 'tools') {
-                populateAllTools();
-            }
-        }
-
-        // Search functionality
         function performSearch() {
             const query = document.getElementById('searchInput').value.trim();
             if (query) {
-                const searchResults = tools.filter(tool => 
-                    tool.name.toLowerCase().includes(query.toLowerCase()) ||
-                    tool.description.toLowerCase().includes(query.toLowerCase()) ||
-                    tool.features.some(feature => feature.toLowerCase().includes(query.toLowerCase()))
-                );
-                
-                filteredTools = searchResults;
-                showPage('tools');
-                
-                // Show search results message
-                const toolsGrid = document.getElementById('toolsGrid');
-                if (searchResults.length === 0) {
-                    toolsGrid.innerHTML = `
-                        <div class="col-span-full text-center py-16">
-                            <h3 class="text-2xl font-semibold text-apple-dark mb-4">No tools found</h3>
-                            <p class="text-apple-gray">Try adjusting your search terms or browse our categories.</p>
-                        </div>
-                    `;
-                } else {
-                    populateAllTools();
-                }
+                // Simulate search functionality
+                alert(`Searching for: "${query}"\n\nThis would typically filter the tools and categories based on your search term.`);
             }
         }
 
-        // Newsletter subscription
-        function subscribeNewsletter() {
-            const email = document.getElementById('newsletterEmail').value.trim();
-            if (email && email.includes('@')) {
-                alert('Thank you for subscribing! You will receive our weekly AI newsletter.');
-                document.getElementById('newsletterEmail').value = '';
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        }
-
-        // Event listeners
+        // Event Listeners
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize home page
-            populateHomeCategories();
-            populateFeaturedTools();
+            populateCategories();
             
             // Search on Enter key
             document.getElementById('searchInput').addEventListener('keypress', function(e) {
@@ -899,10 +1267,26 @@
                 }
             });
             
-            // Newsletter subscription on Enter key
-            document.getElementById('newsletterEmail').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    subscribeNewsletter();
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    if (e.target.classList.contains('category-card') || e.target.classList.contains('tool-card')) {
+                        e.target.click();
+                    }
+                }
+            });
+        });
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
